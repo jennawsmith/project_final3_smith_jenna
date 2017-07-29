@@ -6,30 +6,30 @@
  * Licensed under the MIT license.
  */
 
-;(function ($, window, undefined) {
-  'use strict';
+(function ($, window, undefined) {
+    'use strict';
 
   /** @const */
-  var YOUTUBE_REGEXP = /^.*(youtu\.be\/|youtube\.com\/v\/|youtube\.com\/embed\/|youtube\.com\/watch\?v=|youtube\.com\/watch\?.*\&v=)([^#\&\?]*).*/i;
-  
+    var YOUTUBE_REGEXP = /^.*(youtu\.be\/|youtube\.com\/v\/|youtube\.com\/embed\/|youtube\.com\/watch\?v=|youtube\.com\/watch\?.*\&v=)([^#\&\?]*).*/i;
+
   /* PLUGIN DEFINITION
    * ========================= */
 
-  $.fn.backstretch = function (images, options) {
-    var args = arguments;
+    $.fn.backstretch = function (images, options) {
+        var args = arguments;
 
     /*
      * Scroll the page one pixel to get the right window height on iOS
      * Pretty harmless for everyone else
     */
-    if ($(window).scrollTop() === 0 ) {
-      window.scrollTo(0, 0);
-    }
+        if ($(window).scrollTop() === 0) {
+            window.scrollTo(0, 0);
+        }
 
-    var returnValues;
-    
-    this.each(function (eachIndex) {
-      var $this = $(this)
+        var returnValues;
+
+        this.each(function (eachIndex) {
+            var $this = $(this)
         , obj = $this.data('backstretch');
 
       // Do we already have an instance attached to this element?
@@ -38,7 +38,7 @@
         // Is this a method they're trying to execute?
         if (typeof args[0] === 'string' &&
             typeof obj[args[0]] === 'function') {
-              
+
           // Call the method
           var returnValue = obj[args[0]].apply(obj, Array.prototype.slice.call(args, 1));
           if (returnValue === obj) { // If a method is chaining
@@ -48,7 +48,7 @@
             returnValues = returnValues || [];
             returnValues[eachIndex] = returnValue;
           }
-          
+
           return; // Nothing further to do
         }
 
@@ -74,7 +74,7 @@
       obj = new Backstretch(this, images, options || {});
       $this.data('backstretch', obj);
     });
-    
+
     return returnValues ? returnValues.length === 1 ? returnValues[0] : returnValues : this;
   };
 
@@ -246,9 +246,9 @@
       // Use the image located at where we stopped
       return imageSizes[Math.min(j, lastAllowedImage)];
     };
-    
+
     var replaceTagsInUrl = function (url, templateReplacer) {
-        
+
         if (typeof url === 'string') {
             url = url.replace(/{{(width|height)}}/g, templateReplacer);
         } else if (url instanceof Array) {
@@ -260,7 +260,7 @@
                 }
             }
         }
-        
+
         return url;
     };
 
@@ -300,7 +300,7 @@
     };
 
   })();
-  
+
   var isVideoSource = function (source) {
     return YOUTUBE_REGEXP.test(source.url) || source.isVideo;
   };
@@ -382,18 +382,18 @@
       var image;
 
       for (var i = 0; i < sources.length; i++) {
-        
+
         if (isVideoSource(sources[i])) {
-          
+
           // Do not preload videos. There are issues with that.
           // First - we need to keep an instance of the preloaded and use that exactly, not a copy.
           // Second - there are memory issues.
           // If there will be a requirement from users - I'll try to implement this.
 
           continue;
-            
+
         } else {
-      
+
           image = new Image();
           image.src = sources[i].url;
 
@@ -404,9 +404,9 @@
           } else {
             $(image).on('load error', loaded);
           }
-            
+
         }
-        
+
       }
     };
   })();
@@ -477,7 +477,7 @@
     if (options.scale) {
       options.scale = validScale(options.scale);
     }
-    
+
     return processAlignOptions(options);
   };
 
@@ -528,14 +528,14 @@
       'fit-smaller': 'fit-smaller',
       'fill': 'fill'
   };
-  
+
   function validScale(scale) {
     if (!SUPPORTED_SCALE_OPTIONS.hasOwnProperty(scale)) {
       return 'cover';
     }
     return scale;
   }
-  
+
   /* CLASS DEFINITION
    * ========================= */
   var Backstretch = function (container, images, options) {
@@ -586,7 +586,7 @@
 
     this.originalImages = this.images;
     this.images = optimalSizeImages(
-        this.options.alwaysTestWindowResolution ? $window : this.$root, 
+        this.options.alwaysTestWindowResolution ? $window : this.$root,
         this.originalImages);
 
     /**
@@ -597,13 +597,13 @@
 
     // Don't create a new wrap if one already exists (from a previous instance of Backstretch)
     var $existing = this.$container.children(".backstretch").first();
-    this.$wrap = $existing.length ? $existing : 
+    this.$wrap = $existing.length ? $existing :
         $('<div class="backstretch"></div>')
         .css(this.options.bypassCss ? {} : styles.wrap)
         .appendTo(this.$container);
 
     if (!this.options.bypassCss) {
-        
+
         // Non-body elements need some style adjustments
         if (!this.isBody) {
           // If the container is statically positioned, we need to make it relative,
@@ -624,7 +624,7 @@
         this.$wrap.css({
             position: this.isBody && supportsFixedPosition ? 'fixed' : 'absolute'
         });
-    
+
     }
 
     // Set the first image
@@ -654,7 +654,7 @@
     if (transition instanceof Array) {
       transition = transition[Math.round(Math.random() * (transition.length - 1))];
     }
-    
+
     var $new = options['new'];
     var $old = options['old'] ? options['old'] : $([]);
 
@@ -668,10 +668,10 @@
           easing: options.easing || undefined
         });
         break;
-        
+
       case 'fadeinout':
       case 'fade_in_out':
-            
+
         var fadeInNew = function () {
             $new.fadeIn({
               duration: options.duration / 2,
@@ -679,7 +679,7 @@
               easing: options.easing || undefined
             });
         };
-        
+
         if ($old.length) {
             $old.fadeOut({
               duration: options.duration / 2,
@@ -689,7 +689,7 @@
         } else {
             fadeInNew();
         }
-        
+
         break;
 
       case 'pushleft':
@@ -799,27 +799,27 @@
           }
 
           var bgCSS = {left: 0, top: 0, right: 'auto', bottom: 'auto'}
-          
+
             , boxWidth = this.isBody ? this.$root.width() : this.$root.innerWidth()
             , boxHeight = this.isBody ? ( window.innerHeight ? window.innerHeight : this.$root.height() ) : this.$root.innerHeight()
-            
+
             , naturalWidth = this.$itemWrapper.data('width')
             , naturalHeight = this.$itemWrapper.data('height')
-            
+
             , ratio = (naturalWidth / naturalHeight) || 1
-                    
+
             , alignX = this._currentImage.alignX === undefined ? this.options.alignX : this._currentImage.alignX
             , alignY = this._currentImage.alignY === undefined ? this.options.alignY : this._currentImage.alignY
             , scale = validScale(this._currentImage.scale || this.options.scale);
-          
+
           var width, height;
-                
+
           if (scale === 'fit' || scale === 'fit-smaller') {
             width = naturalWidth;
             height = naturalHeight;
-            
-            if (width > boxWidth || 
-                height > boxHeight || 
+
+            if (width > boxWidth ||
+                height > boxHeight ||
                 scale === 'fit-smaller') {
               var boxRatio = boxWidth / boxHeight;
               if (boxRatio > ratio) {
@@ -840,13 +840,13 @@
             width = Math.max(boxHeight * ratio, boxWidth);
             height = Math.max(width / ratio, boxHeight);
           }
-          
+
           // Make adjustments based on image ratio
           bgCSS.top = -(height - boxHeight) * alignY;
           bgCSS.left = -(width - boxWidth) * alignX;
           bgCSS.width = width;
           bgCSS.height = height;
-          
+
           if (!this.options.bypassCss) {
 
             this.$wrap
@@ -863,7 +863,7 @@
                       relatedTarget: this.$container[0]
                     });
           this.$container.trigger(evt, this);
-          
+
         } catch(err) {
             // IE7 seems to trigger resize before the image is loaded.
             // This try/catch block is a hack to let it fail gracefully.
@@ -924,7 +924,7 @@
             var $this = $(this)
               , $wrapper = $this.parent()
               , options = $wrapper.data('options');
-              
+
             if (overrideOptions) {
               options = $.extend({}, options, overrideOptions);
             }
@@ -949,12 +949,12 @@
 
             // Show the image, then delete the old one
             var bringInNextImage = function () {
-              
+
               if (oldVideoWrapper) {
                 oldVideoWrapper.stop();
                 oldVideoWrapper.destroy();
               }
-              
+
               $oldItemWrapper.remove();
 
               // Resume the slideshow
@@ -972,7 +972,7 @@
               $(['after', 'show']).each(function () {
                 that.$container.trigger($.Event('backstretch.' + this, evtOptions), [that, newIndex]);
               });
-              
+
               if (isVideo) {
                 that.videoWrapper.play();
               }
@@ -1009,7 +1009,7 @@
         if (!isVideo) {
           that.$item.attr('src', selectedImage.url);
         }
-        
+
         that._currentImage = selectedImage;
 
         return that;
@@ -1034,22 +1034,22 @@
     , pause: function () {
         // Pause the slideshow
         this.paused = true;
-        
+
         if (this.videoWrapper) {
           this.videoWrapper.pause();
         }
-        
+
         return this;
       }
 
     , resume: function () {
         // Resume the slideshow
         this.paused = false;
-        
+
         if (this.videoWrapper) {
           this.videoWrapper.play();
         }
-        
+
         this.cycle();
         return this;
       }
@@ -1062,10 +1062,10 @@
 
           var duration = (this._currentImage && this._currentImage.duration) || this.options.duration;
           var isVideo = isVideoSource(this._currentImage);
-          
+
           var callNext = function () {
             this.$item.off('.cycle');
-            
+
             // Check for paused slideshow
             if (!this.paused) {
               this.next();
@@ -1101,12 +1101,12 @@
           if (isVideo && !this._currentImage.duration) {
             // It's a video - playing until end
             this.$item.on('ended.cycle', $.proxy(callNext, this));
-            
+
           } else {
             // Cycling according to specified duration
             this._cycleTimeout = setTimeout($.proxy(callNext, this), duration);
           }
-          
+
         }
         return this;
       }
@@ -1119,7 +1119,7 @@
         if (this.videoWrapper) {
           this.videoWrapper.destroy();
         }
-        
+
         // Clear the timeout
         clearTimeout(this._cycleTimeout);
 
@@ -1130,12 +1130,12 @@
         this.$container.removeData('backstretch');
       }
   };
-    
+
  /**
   * Video Abstraction Layer
   *
   * Static methods:
-  * > VideoWrapper.loadYoutubeAPI() -> Call in order to load the Youtube API. 
+  * > VideoWrapper.loadYoutubeAPI() -> Call in order to load the Youtube API.
   *                                   An 'youtube_api_load' event will be triggered on $(window) when the API is loaded.
   *
   * Generic:
@@ -1144,7 +1144,7 @@
   * > player.play() -> plays the video
   * > player.pause() -> pauses the video
   * > player.setCurrentTime(position) -> seeks to a position by seconds
-  * 
+  *
   * Youtube:
   * > player.ytId will contain the youtube ID if the source is a youtube url
   * > player.ytReady is a flag telling whether the youtube source is ready for playback
@@ -1163,23 +1163,23 @@
   VideoWrapper.prototype.init = function (options) {
 
     var that = this;
-    
+
     var $video;
 
     var setVideoElement = function () {
       that.$video = $video;
       that.video = $video[0];
     };
-    
+
     // Determine video type
-    
+
     var videoType = 'video';
-    
+
     if (!(options.url instanceof Array) &&
       YOUTUBE_REGEXP.test(options.url)) {
       videoType = 'youtube';
     }
-    
+
     that.type = videoType;
 
     if (videoType === 'youtube') {
@@ -1199,7 +1199,7 @@
         .attr({ 'src_to_load': src })
         .css({ 'border': 0, 'margin': 0, 'padding': 0 })
         .data('player', that);
-        
+
       if (options.loop) {
         $video.on('ended.loop', function () {
           if (!that.__manuallyStopped) {
@@ -1221,21 +1221,21 @@
           $video.trigger('initsuccess');
         });
       }
-      
+
     }
     else {
       // Traditional <video> tag with multiple sources
-      
+
       $video = $('<video>')
         .prop('autoplay', false)
         .prop('controls', false)
         .prop('loop', !!options.loop)
         .prop('muted', !!options.mute || options.mute === undefined)
-        
+
         // Let the first frames be available before playback, as we do transitions
         .prop('preload', 'auto')
         .prop('poster', options.poster || '');
-        
+
       var sources = (options.url instanceof Array) ? options.url : [options.url];
 
       for (var i = 0; i < sources.length; i++) {
@@ -1245,12 +1245,12 @@
         }
         $('<source>')
           .attr('src', sourceItem.src)
-          // Make sure to not specify type if unknown - 
+          // Make sure to not specify type if unknown -
           //   so the browser will try to autodetect.
           .attr('type', sourceItem.type || null)
           .appendTo($video);
       }
-      
+
       if (!$video[0].canPlayType || !sources.length) {
         $video.trigger('initerror');
       } else {
@@ -1264,7 +1264,7 @@
 
   VideoWrapper.prototype._initYoutube = function () {
     var that = this;
-    
+
     var YT = window['YT'];
 
     that.$video
@@ -1331,8 +1331,8 @@
     that.ytPlayer = player;
 
     return that;
-  };    
-    
+  };
+
   VideoWrapper.prototype._updateYoutubeSize = function () {
     var that = this;
 
@@ -1371,7 +1371,7 @@
     var that = this;
 
     that.__manuallyStopped = false;
-    
+
     if (that.type === 'youtube') {
       if (that.ytReady) {
         that.$video.trigger('play');
@@ -1388,7 +1388,7 @@
     var that = this;
 
     that.__manuallyStopped = false;
-    
+
     if (that.type === 'youtube') {
       if (that.ytReady) {
         that.ytPlayer.pauseVideo();
@@ -1404,7 +1404,7 @@
     var that = this;
 
     that.__manuallyStopped = true;
-    
+
     if (that.type === 'youtube') {
       if (that.ytReady) {
         that.ytPlayer.pauseVideo();

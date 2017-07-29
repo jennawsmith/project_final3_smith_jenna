@@ -1,7 +1,9 @@
-$('#responsiveTabsDemo').responsiveTabs({
-    startCollapsed: 'accordion'
-});
 
 $(document).ready(function () {
-    $.backstretch('img/.jpg');
+    $.backstretch('img/brick.jpg');
+});
+
+
+$('#responsiveTabsDemo').responsiveTabs({
+    startCollapsed: 'accordion'
 });
