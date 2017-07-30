@@ -137,6 +137,11 @@ footer img {
 .whitetext {
     color: white;
 }
+
+#tab-1 {
+    font-family: europa, sans-serif;
+}
+
 @media all and (min-width: 500px) {
 
     nav ul li {
