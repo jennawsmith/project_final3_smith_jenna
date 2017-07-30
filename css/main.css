@@ -129,6 +129,11 @@ footer {
     padding: 5%;
 }
 
+footer img {
+    width: 10%;
+    display: inline;
+}
+
 .whitetext {
     color: white;
 }
