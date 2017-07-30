@@ -123,7 +123,9 @@ button:hover {
 }
 
 footer {
-    
+    background-color: #1f391a;
+    color: white;
+    opacity: 0.9;
 }
 @media all and (min-width: 500px) {
 
