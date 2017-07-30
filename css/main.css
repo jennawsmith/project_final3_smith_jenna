@@ -2,3 +2,53 @@
     font-family: 'Celtic';
     src: url('../fonts/CELTG___.TTF');
 }
+
+header {
+    background-image: url('../img/wood.jpg');
+}
+
+h2 {
+    font-family: 'Celtic', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #1f391a;
+}
+
+nav {
+    background-color: #1f391a;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    font-family: europa, sans-serif;
+    font-size: 1.25em;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+}
+
+nav ul li {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+p {
+    font-family: europa, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
