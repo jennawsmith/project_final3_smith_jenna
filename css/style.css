@@ -47,18 +47,16 @@
 /* Tab panel */
 .r-tabs .r-tabs-panel {
     background-color: white;
-
     border-bottom: 4px solid white;
-
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-
+    width: 95%;
 }
 
 /* Accordion anchor */
 .r-tabs .r-tabs-accordion-title .r-tabs-anchor {
     display: block;
-    padding: 10px;
+    padding: 2.5%;
     background-color: #1f391a;
     color: #ffffff;
     font-weight: bold;
@@ -66,7 +64,6 @@
     text-decoration: none;
     text-shadow: 0 1px rgba(0, 0, 0, 0.4);
     font-size: 1.1rem;
-
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
 }
@@ -90,21 +87,18 @@ button {
     margin-right: 10px;
     padding: 10px 20px;
     line-height: 100%;
-
     color: #ffffff;
     font-size: 14px;
     text-align: center;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     vertical-align: middle;
     font-weight: bold;
-
     border: 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     background-color: ##1f391a;
     box-shadow: 0 3px 0 0 #00ab94;
-
     cursor: pointer;
 }
 
@@ -116,15 +110,13 @@ button {
     padding: 10px 20px;
     width: 300px;
     line-height: 100%;
-
     font-family: europa, sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
     color: #00c5ad;
     border: 2px solid ##1f391a;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     background-color: #1f391a;
-
     cursor: pointer;
 }
