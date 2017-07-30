@@ -144,6 +144,7 @@ footer img {
 #tab-3,
 #tab-4 {
     font-family: europa, sans-serif;
+    font-size: 1.15rem;
 }
 
 @media all and (min-width: 500px) {
