@@ -116,6 +116,11 @@ button:hover {
 .specialsimg {
     width: 40%;
 }
+
+#specials {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 @media all and (min-width: 500px) {
 
     nav ul li {
