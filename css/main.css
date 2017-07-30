@@ -52,3 +52,19 @@ p {
     font-size: 0.9rem;
     line-height: 1.25rem;
 }
+
+h3 {
+    font-family: europa, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #6f0e1a;
+}
+
+h4 {
+    font-family: europa, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #9daa9a;
+}
