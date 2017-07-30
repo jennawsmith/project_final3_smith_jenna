@@ -113,3 +113,24 @@ button:hover {
     }
 
 }
+
+@media all and (min-width: 1000px) {
+    nav ul li {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    nav {
+        margin-top: -70px;
+    }
+    .maincontainer {
+        float: left;
+        width: 40%;
+        margin: 5%;
+    }
+
+    .maincontainer::after {
+        content: " ";
+        clear: both;
+    }
+}
