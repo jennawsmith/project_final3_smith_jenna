@@ -7,6 +7,10 @@ header {
     background-image: url('../img/wood.jpg');
 }
 
+.logo {
+    width: 100%;
+}
+
 h2 {
     font-family: 'Celtic', sans-serif;
     font-style: normal;
