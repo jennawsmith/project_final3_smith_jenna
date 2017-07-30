@@ -68,3 +68,27 @@ h4 {
     font-size: 1.1rem;
     color: #9daa9a;
 }
+
+button {
+    width: 50%;
+    background-color: #bcc5cb;
+    border-radius: 5px;
+    color: #1f391a;
+    font-family: europa, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: #9daa9a;
+    box-shadow: 1px 1px 13px 4px rgba(102, 102, 102, 0.53);
+}
+
+.centerme {
+    text-align: center;
+}
