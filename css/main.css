@@ -8,7 +8,10 @@ header {
 }
 
 .logo {
-    width: 100%;
+    max-width: 50%;
+    display: block;
+    margin: auto;
+    padding: 10px;
 }
 
 h2 {
@@ -168,18 +171,29 @@ iframe {
         padding: 10px;
         font-size: 1.1rem;
     }
+
+    .logo {
+        width: 40%;
+        margin-left: 30%;
+    }
 }
 
 @media all and (min-width: 768px) {
 
     nav {
         margin-top: -60px;
+        z-index: 0;
     }
 
     nav ul {
         text-align: right;
     }
 
+    .logo {
+        text-align: left;
+        display: inline-block;
+        width: 15%;
+    }
 }
 
 @media all and (min-width: 1000px) {
