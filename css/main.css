@@ -147,6 +147,10 @@ footer img {
     font-size: 1.15rem;
 }
 
+.menuitemheader {
+    margin-bottom: -10px;
+}
+
 @media all and (min-width: 500px) {
 
     nav ul li {
