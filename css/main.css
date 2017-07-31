@@ -155,6 +155,12 @@ footer img {
     border-bottom: 2px solid #1f391a;
 }
 
+iframe {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10%;
+}
+
 @media all and (min-width: 500px) {
 
     nav ul li {
