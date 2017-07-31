@@ -25,7 +25,6 @@ h2 {
 nav {
     background-color: #1f391a;
     color: white;
-    opacity: 0.9;
 }
 
 nav ul,
@@ -126,6 +125,10 @@ button:hover {
     margin-bottom: 10%;
 }
 
+#events {
+    margin-bottom: 10%;
+}
+
 footer {
     background-color: #1f391a;
     color: white;
@@ -173,8 +176,7 @@ iframe {
     }
 
     .logo {
-        width: 40%;
-        margin-left: 30%;
+        width: 30%;
     }
 }
 
@@ -182,7 +184,6 @@ iframe {
 
     nav {
         margin-top: -60px;
-        z-index: 0;
     }
 
     nav ul {
@@ -214,5 +215,10 @@ iframe {
     .maincontainer::after {
         content: " ";
         clear: both;
+    }
+
+    footer {
+        float: right;
+        width: 30%;
     }
 }
