@@ -170,7 +170,7 @@ iframe {
 .call {
     box-shadow: 0;
     margin-top: 5%;
-    
+    color: white;
 }
 
 @media all and (min-width: 500px) {
