@@ -106,7 +106,7 @@ button:hover {
 
 .images {
     width: 100%;
-    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .white-background {
@@ -117,7 +117,8 @@ button:hover {
 }
 
 .specialsimg {
-    width: 40%;
+    width: 20%;
+    margin: auto;
 }
 
 #specials {
@@ -203,13 +204,10 @@ iframe {
     }
 
     .images {
-        max-width: 750px;
+        max-width: 80%;
+        margin-left: 10%;
     }
 
-    .buttons {
-        display: inline;
-        width: 30%;
-    }
 }
 
 @media all and (min-width: 1000px) {
