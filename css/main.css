@@ -202,6 +202,10 @@ iframe {
         width: 15%;
     }
 
+    .images {
+        max-width: 750px;
+    }
+
     .buttons {
         display: inline;
         width: 30%;
