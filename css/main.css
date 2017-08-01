@@ -201,6 +201,13 @@ iframe {
         display: inline-block;
         width: 15%;
     }
+
+    #specials,
+    #events,
+    #reservation {
+        display: inline;
+        width: 10%;
+    }
 }
 
 @media all and (min-width: 1000px) {
