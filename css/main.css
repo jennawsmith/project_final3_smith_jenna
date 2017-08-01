@@ -202,11 +202,9 @@ iframe {
         width: 15%;
     }
 
-    #specials,
-    #events,
-    #reservation {
+    .buttons {
         display: inline;
-        width: 10%;
+        width: 30%;
     }
 }
 
