@@ -219,19 +219,9 @@ iframe {
     nav {
         margin-top: -70px;
     }
-    .maincontainer {
-        float: left;
-        width: 40%;
-        margin: 5%;
-    }
 
     .maincontainer::after {
         content: " ";
         clear: both;
-    }
-
-    footer {
-        float: right;
-        width: 30%;
     }
 }
