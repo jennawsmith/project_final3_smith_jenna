@@ -167,6 +167,12 @@ iframe {
     margin-bottom: 10%;
 }
 
+.call {
+    box-shadow: 0;
+    margin-top: 5%;
+    
+}
+
 @media all and (min-width: 500px) {
 
     nav ul li {
