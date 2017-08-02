@@ -214,6 +214,10 @@ iframe {
         margin-left: 15%;
     }
 
+    .socialmedia {
+        width: 5%;
+    }
+
 }
 
 @media all and (min-width: 1000px) {
