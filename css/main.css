@@ -231,6 +231,10 @@ iframe {
         width: 80%;
         margin-left: 10%;
     }
+
+    .title {
+        margin-top: 5%;
+    }
 }
 
 @media all and (min-width: 1000px) {
