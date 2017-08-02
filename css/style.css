@@ -19,7 +19,7 @@
 /* Tab anchor */
 .r-tabs .r-tabs-nav .r-tabs-anchor {
     display: inline-block;
-    padding: 2.5%;
+    padding: 5px;
     background-color: #1f391a;
     text-decoration: none;
     text-shadow: 0 1px rgba(0, 0, 0, 0.4);
@@ -33,15 +33,17 @@
 .r-tabs .r-tabs-nav .r-tabs-state-disabled {
     opacity: 0.5;
     background-color: #1f391a;
+    padding: 5px;
 }
 
 /* Active state tab anchor */
 .r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor {
-    color: ##1f391a;
+    color: #1f391a;
     text-shadow: none;
     background-color: white;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    padding: 5px;
 }
 
 /* Tab panel */
