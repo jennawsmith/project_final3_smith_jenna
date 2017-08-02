@@ -16,6 +16,6 @@ $('#responsiveTabsDemo').responsiveTabs({
 });
 
 //This is my javascript function that will add content
-//THIS WON'T SHOW UP AFTER MY RESPONSIVE TABS ABOVE
+//THIS WON'T SHOW UP AFTER MY RESPONSIVE TABS ABOVE, but will show up if is placed above it... why?!
 
 document.getElementById('review').innerHTML = '<h3>Please leave us a review!</h3>';
