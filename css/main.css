@@ -208,6 +208,12 @@ iframe {
         margin-left: 10%;
     }
 
+    .width80 {
+        width: 60%;
+        padding-left: 0;
+        margin-left: 15%;
+    }
+
 }
 
 @media all and (min-width: 1000px) {
