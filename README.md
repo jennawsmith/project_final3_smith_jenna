@@ -23,4 +23,13 @@ and in the syllabus."
 
 ### Comments
 
-I am so proud with how much I've learned in this class! Thank you for a great semester! 
+I am so proud with how much I've learned in this class! Thank you for a great semester!
+
+Javascript Explanations:
+Backstretch can be found on each page with the brick background.
+
+The Responsive tabs can be found on the menu page, used for the menu.
+
+The jquery function that I made is used on the index page in the specials section - when clicking on an image, it increases in size.
+
+The javascript function adds "Please leave us a review" to the bottom of the contact page. 
